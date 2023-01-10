@@ -1,11 +1,4 @@
 import cv2
-#
-# img = cv2.imread("Resources/girl.png")
-#
-# cv2.imshow("Output",img)
-#
-# cv2.waitKey(0)
-
 
 cv2.namedWindow("Resized_Window", cv2.WINDOW_NORMAL)
 cv2.resizeWindow("Resized_Window", 700, 500)
