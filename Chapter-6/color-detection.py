@@ -1,6 +1,7 @@
 import cv2
 
 img = cv2.imread("../Resources/car1.png")
+cv2.namedWindow("Trackbars")
 imgHSV = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 
 img1 = cv2.resize(img,(400,300))
