@@ -16,8 +16,13 @@ while True:
 
     imgHSV = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
     h_min = cv2.getTrackbarPos("Hue Min","Trackbars")
+    h_max = cv2.getTrackbarPos("Hue Max","Trackbars")
+    s_min = cv2.getTrackbarPos("Sat Min","Trackbars")
+    s_max = cv2.getTrackbarPos("Sat Max","Trackbars")
+    v_min = cv2.getTrackbarPos("Val Min","Trackbars")
+    v_max = cv2.getTrackbarPos("Val Max","Trackbars")
 
-    print(h_min)
+    print(h_min,h_max,s_min,s_max,v_min,v_max)
     cv2.imshow("Original", img)
     cv2.imshow("HSV", imgHSV)
     cv2.waitKey(1)
