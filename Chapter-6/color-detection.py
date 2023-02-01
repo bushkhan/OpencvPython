@@ -25,14 +25,13 @@ while True:
     lower = np.array([h_min,s_min,v_min])
     upper = np.array([h_max,s_max,v_max])
     mask = cv2.inRange(imgHSV,lower,upper)
-
-
-
+    imgResult = np.bitwise_and(img,img,mask=mask)
 
     print(h_min,h_max,s_min,s_max,v_min,v_max)
     cv2.imshow("Original", img)
     cv2.imshow("HSV", imgHSV)
     cv2.imshow("Mask", mask)
+    cv2.imshow("Result", imgResult)
 
     cv2.waitKey(1)
 
