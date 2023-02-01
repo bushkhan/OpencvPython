@@ -1,25 +1,26 @@
 import cv2
 
-img = cv2.imread("../Resources/car1.png")
 cv2.namedWindow("Trackbars")
-cv2.resizeWindow("Trackbars",640,240)
+cv2.resizeWindow("Trackbars", 640, 240)
 def empty(a):
     pass
 cv2.createTrackbar("Hue Min","Trackbars",0,179,empty)
 cv2.createTrackbar("Hue Max","Trackbars",179,179,empty)
-
 cv2.createTrackbar("Sat Min","Trackbars",0,255,empty)
 cv2.createTrackbar("Sat Max","Trackbars",255,255,empty)
 cv2.createTrackbar("Val Min","Trackbars",0,255,empty)
 cv2.createTrackbar("Val Max","Trackbars",255,255,empty)
 
-imgHSV = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+while True:
+    img = cv2.imread("../Resources/car1.png")
 
-img1 = cv2.resize(img,(400,300))
-imgHSV1 = cv2.resize(imgHSV,(400,300))
+    imgHSV = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+    h_min = cv2.getTrackbarPos("Hue Min","Trackbars")
 
-cv2.imshow("Original",img1)
+    print(h_min)
+    cv2.imshow("Original", img)
+    cv2.imshow("HSV", imgHSV)
+    cv2.waitKey(1)
 
-cv2.imshow("HSV",imgHSV1)
 
-cv2.waitKey(0)
+
